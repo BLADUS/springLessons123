@@ -17,7 +17,8 @@
     </bean>
 
     <bean id="characterBean"
-          class="ru.osada.springLes.Character">
+          class="ru.osada.springLes.Character"
+    scope="prototype">
         <property name="race" value="${Character.race}"/>
         <property name="level" value="${Character.level}"/>
         <constructor-arg ref="weaponBean2"/>
