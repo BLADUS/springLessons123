@@ -6,13 +6,20 @@
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
+    <context:property-placeholder location="character.properties "/>
 
-    <bean id="weaponBean"
+    <bean id="weaponBean1"
           class="ru.osada.springLes.Sword">
+    </bean>
+
+    <bean id="weaponBean2"
+          class="ru.osada.springLes.FireBall">
     </bean>
 
     <bean id="characterBean"
           class="ru.osada.springLes.Character">
-        <constructor-arg ref="weaponBean"/>
+        <property name="race" value="${Character.race}"/>
+        <property name="level" value="${Character.level}"/>
+        <constructor-arg ref="weaponBean2"/>
     </bean>
 </beans>

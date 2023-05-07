@@ -15,6 +15,8 @@ public class TestSpring {
 
         Character character = context.getBean("characterBean",Character.class);
         character.launchAttack();
+        System.out.println("Раса персонажа: " + character.getRace());
+        System.out.println("Уровень персонажа: " + character.getLevel());
         context.close();
     }
 }
