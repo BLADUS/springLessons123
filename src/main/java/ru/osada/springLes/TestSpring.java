@@ -9,8 +9,11 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class TestSpring {
     public static void main(String[] args) {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
-        Weapon weapon = context.getBean("weaponBean", Weapon.class);
-        Character character = new Character(weapon);
+        /*Тут мы сами создаем оружие и сами же его присваеваем его нашеу персонажу*/
+        /*Weapon weapon = context.getBean("weaponBean", Weapon.class);
+        Character character = new Character(weapon);*/
+
+        Character character = context.getBean("characterBean",Character.class);
         character.launchAttack();
         context.close();
     }
